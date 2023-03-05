@@ -1,17 +1,10 @@
 import { Outlet } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
-import { uuid } from 'react-uuid';
 import { useParams } from "react-router-dom";
 
 function Layout(props){
     let notes = props.notes;
-    let deleteNote = props.deleteNote; // function to remove a note from array
-    let editedNote = props.getEditedNote; // getter
-    let editNote = props.editNote; // to edit notes
     let setEdited = props.setEdited;
-    let addNote = props.addNote;
-    let length = props.getNoteslength;
     const [sidebarStatus,setSidebarStatus] = useState(true);
     const toggleSidebar = () => {
         setSidebarStatus(!sidebarStatus)

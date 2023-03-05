@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
-import { useParams } from "react-router-dom";
 import Note from './Note';
 import Layout from './Layout';
 import NoteEdit from './NoteEdit';
 import { v4 as uuidv4 } from 'uuid';
-import { useNavigate } from "react-router-dom";
 
 function App() {
   const [note, setNote] = useState(

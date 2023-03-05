@@ -1,20 +1,16 @@
-import { Outlet, useOutlet, Link } from "react-router-dom";
-import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
-import { uuid } from 'react-uuid';
 import { useParams } from "react-router-dom";
 
 
 function Sidebar(props){
     let notes = props.notes;
-    let deleteNote = props.deletenote; // function to remove a note from array
     let editedNote = props.getEditedNote; // getter
     let editNote = props.editNote; // to edit notes
     let setEdited = props.setEdited;
     let addNote = props.addNote;
     let sidebarStatus = useOutletContext();
-    const {noteId} = useParams(); 
     
     const navigate = useNavigate();
     const addNoteSide = () => {

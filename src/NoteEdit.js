@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import React, { useEffect, useState, useRef } from 'react';
+import React, {useState} from 'react';
 import { useOutletContext } from "react-router-dom";
 import ReactQuill from "react-quill";
 import { useNavigate } from "react-router-dom";
@@ -13,7 +13,6 @@ function NoteEdit(props){
     let editNote = props.editNote; // to edit notes
     let setEdited = props.setEdited;
     let addNote = props.addNote;
-    let length = props.getNoteslength;
     let sidebarStatus = useOutletContext();
     const {noteId} = useParams(); 
     
