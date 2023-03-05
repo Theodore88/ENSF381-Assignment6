@@ -1,16 +1,322 @@
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-li,
+li{
+  list-style: none;
+}
+button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.header nav{
+  width: 100%;
+  border-bottom: 1px solid rgba(172, 164, 164, 0.541);
+  margin: 0;
+}
+.header ul {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  margin: 0;
+  padding: 0;
+}
+#menu{
+  /* padding-left: 20px;
+  padding-right: 40px; */
+  padding: 28px;
+  padding-right: 55px;
+  width: 0%;
+  font-size: 30px;
+}
+#menu:hover{
+  background-color: rgb(73, 44, 115);
+  color: white;
+}
+.title{
+  padding-right: 80px;
+  flex: 1;
+  flex-direction: column;
+}
+.title li{
+  text-align: center;
+}
+#headtitle{
+  margin-bottom: 0%;
+  font-size: 30px;
+}
+#subtitle{
+  margin-top: 0%;
+  color: grey;
+}
+.underHead{
+  display: flex;
+}
+
+.sidebar{
+  display: flex;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  border-right: 1px solid rgba(172, 164, 164, 0.541);
+}
+.sidebarhead{
+  width: 400px;
+  border-right: 1px solid rgba(172, 164, 164, 0.541);
+  display: flex;
+  padding-left: 10px;
+  border-bottom: 1px solid rgba(172, 164, 164, 0.541);
+  flex-direction: row;
+}
+.sidebarhead h2{
+  flex: 1;
+}
+#addNote{
+  font-size: 30px;
+  text-align: flex-end;
+  text-justify: right;
+  padding-inline: 26px;
+}
+#addNote:hover{
+  background-color: rgb(73, 44, 115);
+}
+#noteList{
+  height: 100vh;
+  border-right: 1px solid rgba(172, 164, 164, 0.541);
+  padding-top: 20px;
+  text-align: center;
+  font-size: x-large;
+  color: grey
+}
+.content{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+.noteBody{
+  display: flex;
+  width: 100%;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+
+}
+.noteBody p{
+  font-size: 30px; 
+  color: grey;
+}
+.noteBodyNone{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  justify-self: center;
+  justify-items: center;
+  justify-content: center;
+  text-align: center;
+  text-justify: center;
+
+}
+.noteBodyNone p{
+  font-size: 30px; 
+  color: grey;
+}
+#noNote{
+  flex: 1;
+  padding-top: 10px;
+}
+.notesList{
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  margin: 0px;
+}
+.notesList li{
+  flex:1;
+  padding: 10px;
+  padding-bottom: 40px;
+  text-align: start;
+  border-bottom: 1px solid rgba(172, 164, 164, 0.541);
+  font-size: 20px;
+  color: black;
+  cursor: pointer;
+}
+.notesList li:hover{
+  background-color: rgb(73, 44, 115);
+  color: white;
+}
+.sidebarNote.active{
+  background-color: rgb(73, 44, 115);
+  color: white;
+}
+.notesList li h3
+{
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.notesList li p{
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: lighter;
+  word-wrap: break-word;
+  max-width: 380px;
+  max-height: 30px;
+}
+.notesList li span{
+  font-size: 15px;
+  color: grey;
+  font-weight: 100;
+}
+Link{
+  text-decoration: none;
+}
+.noteEditor{
+  display: flex;
+  flex-direction: column;
+  width: 75.7%;
+  height: 106vh;
+}
+.noteEditor.sidebar-close{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 106vh;
+}
+.noteEditorHead{
+  padding-left: 10px;
+  margin-top:10px;
+}
+.noteEditorHead h2{
+  margin-bottom: 0px;
+  font-weight: 500;
+  display:inline
+}
+.noteEditorHead input{
+  flex: 1;
+  display: block;
+  padding-bottom: 10px;
+  border: none;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+}
+#noteTitle{
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 50%;  
+  font-size: 30px;
+}
+.noteEditorHead button{
+  font-size: 15px;
+  height: 120%;
+  padding-inline: 10px;
+  margin-top: -60px;
+  text-align: center;
+  float: right;
+}
+.noteEditorHead button:hover{
+  background-color: rgb(73, 44, 115);
+  color:white
+}
+.quill{
+  flex: 1;
+}
+
+.ql-container{
+  border-left: 0px !important;
+  border-bottom: 0px !important;
+
+}
+
+.ql-toolbar{
+  border-left: 0px !important;
+}
+.ql-editor{
+  font-size: large;
+}
+
+.noteView{
+  display: flex;
+  flex-direction: column;
+  width: 75.6%;
+}
+.noteView.sidebar-close{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.noteHead{
+  padding-left: 10px;
+  margin-top:10px;
+  border-bottom: 1px solid rgba(172, 164, 164, 0.541);
+}
+.noteHead h2{
+  margin-bottom: 0px;
+  font-weight: 500;
+  display:inline
+}
+.noteHead p{
+  font-size: 15px;
+  color: grey;
+  font-weight: 100;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.noteHead button{
+  font-size: 15px;
+  height: 114%;
+  padding-inline: 10px;
+  margin-top: -10px;
+  text-align: center;
+  float: right;
+}
+.noteHead button:hover{
+  background-color: rgb(73, 44, 115);
+  color:white
+}
+.noteBodyView{
+  flex: 1;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.noteBodyView p{
+  padding: 10px;
+  font-size: 18px;
+  color: black;
+  word-wrap: break-word;
+}
+.noteBodyView p li {
+  list-style: inherit;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 p {
   margin: 0;
   padding: 0;
 }
-a {
-  color: inherit;
-  text-decoration: none;
-}
+
+/* align-self: right;
+  align-items: right;
+  align-content: right;
+  justify-self: right;
+  justify-items: right;
+  justify-content: right;
+  text-align: right;
+  text-justify: right; */
