@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 import Note from './Note';
 import Layout from './Layout';
 import NoteEdit from './NoteEdit';
@@ -77,6 +77,7 @@ function App() {
   <BrowserRouter>
     <Routes>
       <Route element={<Layout notes = {note} deleteNote = {deleteNote} getEditedNote = {getEditedNote} addNote = {addNote} setEdited = {setEdited} editNote = {editNote} noteNum = {noteNum}/>}>
+        <Route exact path='/' element={<Navigate to='/notes' />} />
         <Route path="/notes" element={<Note notes = {note} deleteNote = {deleteNote} getEditedNote = {getEditedNote} addNote = {addNote} setEdited = {setEdited} editNote = {editNote} noteNum = {noteNum} />}></Route> 
         <Route exact path="/notes/:noteId" element={<Note notes = {note} deleteNote = {deleteNote} getEditedNote = {getEditedNote} addNote = {addNote} setEdited = {setEdited} editNote = {editNote} noteNum = {noteNum}/>}></Route> 
         <Route exact path="/notes/:noteId/edit" element={<NoteEdit notes = {note} deleteNote = {deleteNote} getEditedNote = {getEditedNote} addNote = {addNote} setEdited = {setEdited} editNote = {editNote} noteNum = {noteNum}/>}></Route> 
