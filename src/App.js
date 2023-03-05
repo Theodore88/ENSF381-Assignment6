@@ -15,9 +15,6 @@ function App() {
     localStorage.edited ? JSON.parse(localStorage.getItem('edited')) : false
   );  
   const [noteNum, setNoteNum] = useState(0);
-  // const [edited, setEdited] = useState();
-  // const [noteNum, setNoteNum] = useState(0);
-  
   // localStorage.clear()
   console.log(note.length)
   console.log(edited)
@@ -77,8 +74,6 @@ function App() {
     } 
     return(note.find(({ id }) => id === edited));
   }
-  // console.log(getEditedNote())
-
 
   return(
   <BrowserRouter>

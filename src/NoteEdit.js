@@ -17,7 +17,6 @@ function NoteEdit(props){
     let sidebarStatus = useOutletContext();
     const {noteId} = useParams(); 
     
-    console.log(editedNote())
     let newNote = {
         title: 'Untitled',
         body: '',
@@ -26,20 +25,15 @@ function NoteEdit(props){
     const [storedNote, setStoredNote] = useState(editedNote());
     
 
-    // console.log((editedNote().id))
     const navigate = useNavigate();
 
     const formatDateTime = (when) => {
-        console.log(when)
         when = new Date(when);
-        console.log(when)
         return(`${when.getFullYear()}-${(when.getMonth()+1).toString().padStart(2, '0')}-${when.getDate().toString().padStart(2, '0')}T${when.getHours().toString().padStart(2, '0')}:${when.getMinutes().toString().padStart(2, '0')}`)
     };
 
     const saveNote = () => {
         let editingNote = editedNote();
-        console.log(storedNote.body)
-        console.log(editingNote)
         editNote({
             ...editingNote,
             "title": storedNote.title,
@@ -56,7 +50,6 @@ function NoteEdit(props){
           }
         else if (field === "body") {
           setStoredNote({ ...storedNote, body: value });
-          console.log(storedNote)
         }
         else
         {
@@ -70,7 +63,6 @@ function NoteEdit(props){
         if (answer) 
         {
             deleteNote(editId);
-            console.log(notes)
             if(notes.length>1)
             {
                 navigate("/notes/1");
@@ -84,10 +76,7 @@ function NoteEdit(props){
     let noteTitle = editedNote().title;
     let noteBody = (editedNote().body).replace(/<p><br><\/p>/g,"");
     let noteDate = editedNote().date;
-    console.log(noteBody)
-    console.log(noteDate)
-    console.log(editedNote())
-    console.log(storedNote)
+    
     return(
         <>
         <Sidebar sidebarStatus = {sidebarStatus} notes = {notes} deleteNote = {deleteNote} getEditedNote = {editedNote} addNote = {addNote} setEdited = {setEdited} editNote = {editNote}  />

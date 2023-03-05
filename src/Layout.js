@@ -24,14 +24,11 @@ function Layout(props){
         const editedNote = notes[noteId-1];
             if (editedNote) {
                 setEdited(editedNote.id);
-                console.log("if")
             }
         }
             else{
-                console.log("else")
                 setEdited(false);
             }
-        console.log(editedNote())
     }, [notes, noteId]);
 
     return(

@@ -35,7 +35,6 @@ function Sidebar(props){
         }
         return formatted;
     };
-    console.log(editedNote())
    
     return(
         <>

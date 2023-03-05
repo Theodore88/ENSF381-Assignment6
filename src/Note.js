@@ -15,7 +15,6 @@ function Note(props){
     const navigate = useNavigate();
     const {noteId} = useParams(); 
     
-    console.log(noteId)
     if(!editedNote()){
         return(
             <>
@@ -28,11 +27,9 @@ function Note(props){
     }
     const handleDelete = () => {
         let editId = editedNote().id;
-        console.log("notes")
         const answer = window.confirm("Are you sure?");
         if (answer) 
         {
-            console.log("notes")
             deleteNote(editId);
             if(notes.length>1)
             {
@@ -67,7 +64,6 @@ function Note(props){
     const editNoteNav = () => {
         navigate(`/notes/${noteId}/edit`);
     }
-    console.log(noteBody)
     return(
         <>
         <Sidebar sidebarStatus = {sidebarStatus} notes = {notes} deleteNote = {deleteNote} getEditedNote = {editedNote} addNote = {addNote} setEdited = {setEdited} editNote = {editNote} />
